@@ -32,7 +32,7 @@ function getPic() {
   allProps.forEach((item) => item.classList.add("hidden"));
   const [year, month, day] = dateInput?.value.split("-");
   const formattedDate = !dateInput.value
-    ? new Date().toISOString().split("T")[0]
+    ? (dateInput.value = new Date().toISOString().split("T")[0])
     : `${year}-${month}-${day}`;
 
   fetch(
